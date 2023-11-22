@@ -54,7 +54,7 @@ environment {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"3a565b49-a33f-4c5a-ae44-5187bf3441d2"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"3f02d0a7-86c1-4f41-9899-f0a9ededcb1b"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
