@@ -1,3 +1,5 @@
+def registry =  'https://datatemplate.jfrog.io/'
+
 pipeline {
     agent {label 'maven'}
 
