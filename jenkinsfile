@@ -91,7 +91,7 @@ environment {
         steps {
             script {
                 echo '<--------------- Docker Publish Started --------------->'  
-                docker.withRegistry(registry, '3a565b49-a33f-4c5a-ae44-5187bf3441d2'){
+                docker.withRegistry(registry, '239bd1a3-78da-44f2-af10-8bc6bdea84ed'){
                 app.push()
                 }    
                 echo '<--------------- Docker Publish Ended --------------->'  
