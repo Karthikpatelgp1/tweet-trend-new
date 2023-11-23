@@ -1,4 +1,4 @@
-def registry = 'https://datatemplate.jfrog.io/'
+def registry = 'https://namg05.jfrog.io/'
 
 pipeline {
     agent {label 'maven'}
@@ -54,7 +54,7 @@ environment {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"3f02d0a7-86c1-4f41-9899-f0a9ededcb1b"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"239bd1a3-78da-44f2-af10-8bc6bdea84ed"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
