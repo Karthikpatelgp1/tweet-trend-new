@@ -1,4 +1,6 @@
 def registry = 'https://namg05.jfrog.io/'
+def imagename = 'namg05.jfrog.io/karthik-docker-local/karthikp'
+def version = '2.1.2'
 
 pipeline {
     agent {label 'maven'}
@@ -75,5 +77,26 @@ environment {
 
         }   
     }
+    stage(" Docker Build ") {
+        steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName+":"+version)
+               echo '<--------------- Docker Build Ends --------------->'
+            }
+          }
+        }
+    
+    stage (" Docker Publish "){
+        steps {
+            script {
+                echo '<--------------- Docker Publish Started --------------->'  
+                docker.withRegistry(registry, '3a565b49-a33f-4c5a-ae44-5187bf3441d2'){
+                app.push()
+                }    
+                echo '<--------------- Docker Publish Ended --------------->'  
+                }
+            }
+        } 
     }
 }   
