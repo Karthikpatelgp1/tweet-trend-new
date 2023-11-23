@@ -1,3 +1,3 @@
 FROM openjdk:8
-ADD jarstaging/com/valaxy/demo-workshop-2.1.2.jar namtrend.jar
-ENTRYPOINT [ "java", "-jar", "namtrend.jar" ]
+ADD jarstaging/com/valaxy/demo-workshop-2.1.2.jar  demo-workshop.jar
+ENTRYPOINT [ "java", "-jar", " demo-workshop.jar" ]
