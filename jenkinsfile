@@ -1,6 +1,6 @@
 def registry = 'https://namg05.jfrog.io/'
-//def imagename = 'namg05.jfrog.io/karthik-docker-local/namtrend'
-//def version = '2.1.2'
+def imagename = 'namg05.jfrog.io/karthik-docker-local/namtrend'
+def version = '2.1.2'
 
 pipeline {
     agent {label 'maven'}
@@ -62,7 +62,7 @@ environment {
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": "namg-libs-release-local/{1}",
+                              "target": "libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
@@ -77,7 +77,7 @@ environment {
 
         }   
     }
-   /* stage(" Docker Build ") {
+    stage(" Docker Build ") {
         steps {
             script {
                echo '<--------------- Docker Build Started --------------->'
@@ -97,6 +97,6 @@ environment {
                 echo '<--------------- Docker Publish Ended --------------->'  
                 }
             }
-        } */
+        } 
     }
 }  
