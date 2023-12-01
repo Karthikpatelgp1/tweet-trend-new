@@ -101,7 +101,7 @@ environment {
     stage ("Deploy") {
         steps {
             script {
-                sh './deploy.sh'
+                sh 'helm install namtrend namtrend-0.1.0.tgz'
             }
         }
     }
