@@ -101,7 +101,9 @@ environment {
     stage ("Deploy") {
         steps {
             script {
+                echo '<-----------Helm deploy Started---------->'
                 sh 'helm install namtrend namtrend-0.1.0.tgz'
+                echo '<-----------Helm Deploy Ends------------->'
             }
         }
     }
